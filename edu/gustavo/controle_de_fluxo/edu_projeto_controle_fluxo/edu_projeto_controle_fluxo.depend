@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1789324257 source:/home/dargor/codeblocks_workspace/ufsc_curso_c/edu/gustavo/controle_de_fluxo/edu_projeto_controle_fluxo/main.c
+	<stdio.h>
+	<stdlib.h>
+	"auto_avaliacao_strlen_teste.h"
+
+1789316468 /home/dargor/codeblocks_workspace/ufsc_curso_c/edu/gustavo/controle_de_fluxo/edu_projeto_controle_fluxo/auto_avaliacao4.h
+	<stdio.h>
+
+1789344678 /home/dargor/codeblocks_workspace/ufsc_curso_c/edu/gustavo/controle_de_fluxo/edu_projeto_controle_fluxo/auto_avaliacao_strlen_teste.h
+	<stdio.h>
+	<string.h>
+
