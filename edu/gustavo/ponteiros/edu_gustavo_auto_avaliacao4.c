@@ -3,10 +3,11 @@
 
 int strend(char *s, char *t) 
 {	
-	char temp0[100], temp1[100];
-	int count, i, lenght = 1000;
+	char temp0[100], temp1[100], temp2[100];
+	int count, i, lenght = 1000, lenght1;
 	int mesmo_caracter[lenght];
 	int *pmesmo_caracter;
+	int flag, qtd_acertos;
 	
 	/* Preenche a matriz, mesmo caracter de zeros */
 	for (i=0; i < lenght; i++) mesmo_caracter[i] = 0;
@@ -55,23 +56,48 @@ int strend(char *s, char *t)
 		s++;
 		pmesmo_caracter++;
 	}
+	t = &temp0[0];
+	
+	/* Volta *s para a posição após o primeiro espaço */
+	while (*s != ' '){
+		s--;
+	}
+	*s++;
+	
+	i=0;
+	while (*s) {
+		temp2[i] = *s;
+		i++;
+		s++;	
+	}
+		
+	while (*s != ' '){
+		s--;
+	}
+	*s++;
 	
 	/* Soma as ocorrencias de repetições de characters entre as matrizes */
 	count = 0;
-	for (i=0; i < lenght; i++) 
-	{
-		count += mesmo_caracter[i];
-	}
+	qtd_acertos = 0;
+	
+	lenght1 = strlen(temp2);
+	for (i=0; i < lenght1; i++) {
+		if (*s == *t) qtd_acertos += 1;
+		s++;
+		t++;
+	}	
+	
 
-	lenght = strlen(temp0);
-	if (count >= lenght) return (1);
-	else return (0);	
-
+	if (qtd_acertos == lenght1)
+		return (1);
+	else
+		return (0);
+			
 }
 
 int main() {
-	char *str1 = "galinha atravesou a rua.";
-	char *str2 = "xyz.";
+	char *str1 = "galinha .bat";	/* O ' ' é necessário para o programa começar a verificar a "Ultima palavra" */
+	char *str2 = ".bat";
 	int contem_os_caracteres;
 	
 	contem_os_caracteres = strend(str1, str2);
