@@ -1,0 +1,1 @@
+int EPar (int a);
